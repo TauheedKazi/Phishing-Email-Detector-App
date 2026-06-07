@@ -2,9 +2,7 @@
 import streamlit as st
 import joblib
 
-# ---------------------------------------------------
-# PAGE CONFIGURATION
-# ---------------------------------------------------
+#Title Page
 
 st.set_page_config(
     page_title="Phishing Email Detector",
@@ -93,15 +91,11 @@ p{
 
 """, unsafe_allow_html=True)
 
-# ---------------------------------------------------
-# LOAD MODEL
-# ---------------------------------------------------
+#Loading Model
 
 model = joblib.load("email_phishing_model.pkl")
 
-# ---------------------------------------------------
-# SUSPICIOUS KEYWORDS
-# ---------------------------------------------------
+# Inputing all the keywords that our model will check and mark them as suspicious
 
 SUSPICIOUS_KEYWORDS = [
     "verify",
@@ -128,9 +122,7 @@ SUSPICIOUS_KEYWORDS = [
     "credential"
 ]
 
-# ---------------------------------------------------
-# SIDEBAR
-# ---------------------------------------------------
+# side bar 
 
 st.sidebar.title("📧 Phishing Email Detector")
 
@@ -156,9 +148,7 @@ Tauheed Kazi
 """
 )
 
-# ---------------------------------------------------
-# MAIN PAGE
-# ---------------------------------------------------
+# Main Page
 
 st.markdown("""
 <h1 style='
@@ -186,9 +176,7 @@ email_text = st.text_area(
     height=300
 )
 
-# ---------------------------------------------------
-# BUTTON
-# ---------------------------------------------------
+# "Analyze Email" BUTTON
 
 if st.button("Analyze Email"):
 
@@ -210,9 +198,9 @@ if st.button("Analyze Email"):
             if word in email_lower:
                 found_keywords.append(word)
 
-        # -------------------------------------------
-        # PHISHING
-        # -------------------------------------------
+        
+        # IF ELSE FOR PHISHING
+        
 
         if prediction == 1:
 
@@ -353,9 +341,9 @@ if st.button("Analyze Email"):
                 for i, word in enumerate(found_keywords):
                     cols[i % 4].success(word)
 
-        # -------------------------------------------
-        # SAFE
-        # -------------------------------------------
+        # 
+        # IF ELSE statements for SAFE EMAIL
+        
 
         else:
 
@@ -397,9 +385,9 @@ if st.button("Analyze Email"):
                 "No significant phishing indicators were detected."
             )
 
-        # -------------------------------------------
+        
         # EMAIL STATISTICS
-        # -------------------------------------------
+        
 
         st.markdown("---")
 
@@ -426,9 +414,9 @@ if st.button("Analyze Email"):
             lines
         )
 
-# ---------------------------------------------------
-# FOOTER
-# ---------------------------------------------------
+
+# OUTRO
+
 
 st.markdown("---")
 
