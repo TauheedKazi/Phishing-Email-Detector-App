@@ -55,4 +55,3 @@ cd Phishing-Email-Detector-App
 pip install -r requirements.txt
 
 streamlit run app.py
-'''
