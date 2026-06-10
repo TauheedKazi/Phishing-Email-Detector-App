@@ -50,6 +50,8 @@ source (https://www.kaggle.com/datasets/subhajournal/phishingemails)
 ```bash
 git clone https://github.com/TauheedKazi/Phishing-Email-Detector-App.git
 
+open cmd
+
 cd Phishing-Email-Detector-App
 
 pip install -r requirements.txt
