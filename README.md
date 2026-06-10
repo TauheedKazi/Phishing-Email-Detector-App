@@ -54,7 +54,7 @@ git clone https://github.com/TauheedKazi/Phishing-Email-Detector-App.git
 
 open cmd
 
-cd Phishing-Email-Detector-App
+cd /.../Phishing-Email-Detector-App
 
 pip install -r requirements.txt
 
