@@ -2,6 +2,8 @@
 
 An AI-powered phishing email detection system built using Machine Learning and Natural Language Processing.
 
+[![Email Phishing Detection Portal](assets/email_phishing_Detector_BG.png)](https://your-phishing-app.streamlit.app)
+
 website link : https://emailscan.streamlit.app/
 
 ## Features
